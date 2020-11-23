@@ -18,5 +18,5 @@ get '/login' => 'sessions#new'
 post 'login' => 'sessions#create'
 delete 'logout' => 'sessions#destroy'
 resources :users
-resources :events, only: [:index, :new, :show, :destroy]
+resources :events, only: [:index, :new, :create, :show, :destroy]
 end
