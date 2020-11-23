@@ -7,15 +7,15 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
        session[:user_id] = @user.id
-       redirect_to root_path
+       redirect_to '/'
     else
-       redirect_to '/login'
+       redirect_to '/login', notice: "didnt work"
     end
  end
  
  def destroy
   session.delete(:user_id)
   # session[:user_id] = nil
-  redirect_to root_path, notice: "Logged out!"
+  redirect_to '/', notice: "Logged out!"
 end
 end

@@ -1,2 +1,11 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% if current_user %>
+<ul>
+<li><%= current_user.username %></li>
+<li><%= link_to "Log out", logout_path, method: "delete" %></li>
+</ul>
+<% else %>
+<ul>
+<li><%= link_to "Login", 'login' %></a></li>
+<li><%= link_to "Signup", 'signup' %></a></li>
+</ul>
+<% end %>
