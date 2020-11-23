@@ -4,8 +4,10 @@ class UsersController < ApplicationController
   end
 
   def create
-  end
-
+    @user = User.create(user_params)
+    session[:user_id] = @user.id
+    redirect_to '/'
+ end
   def destroy
   end
 
