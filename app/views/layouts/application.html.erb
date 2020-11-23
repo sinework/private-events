@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PrivateEvents</title>
+    <title>Pv</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,24 @@
   </head>
 
   <body>
-    <%= yield %>
+     <header>
+  
+<%= render "layouts/nav" %>
+  </header>
+    <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+    <div class="col-lg-2">
+
+    </div>
+      <div class="col-lg-8 text-center pt-5">
+       
+         <%= yield %>
+      </div>
+      <div class="col-lg-2">
+    
+    </div>
+    </div>
+  </div>
   </body>
 </html>
