@@ -9,9 +9,8 @@ class SessionsController < ApplicationController
        session[:user_id] = @user.id
        redirect_to '/'
     else
-      # flash.now[:alert] = " didnt work"
-      #  redirect_to '/signup', notice: "didnt work"
-       format.html { redirect_to '/signup', notice: 'Tweet was successfully destroyed.' }
+   
+       format.html { redirect_to '/signup', notice: '' }
       format.json { render json: @user.errors, status: :unprocessable_entity  }
       
     end
