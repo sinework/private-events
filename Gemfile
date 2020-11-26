@@ -21,9 +21,9 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'simple_form'
 gem 'bootstrap', '~> 4.5', '>= 4.5.3'
 gem 'jquery-rails'
+gem 'simple_form'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -32,10 +32,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
-   gem 'factory_bot_rails', '~> 5.1'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 3.33'
+  gem 'factory_bot_rails', '~> 5.1'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   gem 'shoulda-matchers'
 end
 
@@ -46,11 +46,11 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
- gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
+  gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   include ApplicationHelper
   before_action :set_event, only: %i[show destroy]
-   before_action :require_user, only: %i[new create]
+  before_action :require_user, only: %i[new create]
 
   def destroy
     @event.destroy
@@ -10,10 +10,12 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
-def index
-  @past_events = Event.past
-  @upcoming_events = Event.upcoming
-end
+
+  def index
+    @past_events = Event.past
+    @upcoming_events = Event.upcoming
+  end
+
   def create
     @event = current_user.events.build(event_params)
     respond_to do |format|
