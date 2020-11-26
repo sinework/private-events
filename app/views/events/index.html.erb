@@ -1,2 +1,37 @@
-<h1>Events#index</h1>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class="d-flex flex-sm-column flex-md-row">
+<div class="card w-100">
+<h3>Past Events</h3>
+<%@past_events.each do |event| %>
+<%= link_to event_path(event), class:'text-decoration-none' do%>
+   <div class="card border-secondary m-3  ">
+          <div class="card-header text-info"> <%= event.title%></div>
+          <div class="card-body">
+            
+            <p class="card-text text-secondary"><%= event.description%></p>
+         <% (attendance_status(event)).each do|button|%>
+         <%=raw button%>
+          <%end%>
+          </div>
+        </div>
+        <%end%>
+        <%end%>
+</div>
+<div class="card w-100">
+<h3>Upcoming Events</h3>
+<%@upcoming_events.each do |event| %>
+<%= link_to event_path(event), class:'text-decoration-none' do%>
+   <div class="card border-success m-3  ">
+          <div class="card-header text-info"> <%= event.title%></div>
+          <div class="card-body">
+            
+            <p class="card-text text-secondary"><%= event.description%></p>
+         <% (attendance_status(event)).each do|button|%>
+         <%=raw button%>
+          <%end%>
+          </div>
+        </div>
+        <%end%>
+        <%end%>
+</div>
+</div>
+  
