@@ -41,9 +41,9 @@ module ApplicationHelper
     if logged_in?
       if events_attended.find_by(id: event.id)
         results << "<button class='btn btn-success text-decoration-none text-light'> Attending </button> "
-        results << "<button class='btn btn-danger text-decoration-none'>#{link_to 'Cancel',
-                                                                                  attendance_path(event.id),
-                                                                                  method: :delete, class: 'text-decoration-none text-light'} </button> "
+        results << "<button class='btn btn-danger'>
+        #{link_to 'Cancel', attendance_path(event.id),
+                  method: :delete, class: 'text-decoration-none text-light'} </button> "
       else
         results << "<button class='btn btn-primary'>
          #{link_to 'Attend',
