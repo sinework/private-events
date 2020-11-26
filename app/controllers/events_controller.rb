@@ -11,7 +11,8 @@ class EventsController < ApplicationController
     end
   end
 def index
-@event=Event.all
+  @past_events = Event.past
+  @upcoming_events = Event.upcoming
 end
   def create
     @event = current_user.events.build(event_params)
