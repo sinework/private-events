@@ -1,2 +1,25 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class= "row">
+<div class="col col-8">
+
+   <div class="card border-success w-100 ">
+          <div class="card-header text-info"> <%= @event.title%></div>
+          <div class="card-body">
+            
+            <p class="card-text text-secondary"><%= @event.description%></p>
+         <% (attendance_status(@event)).each do|button|%>
+         <%=raw button%>
+          <%end%>
+          </div>
+        </div>
+        <h4>Attendees</h4>
+         <ul class="list-group mb-5">
+        <% @event.attendees.each do |attendee|%>
+
+            <li class="list-group-item"><%=attendee.username%></li>
+          
+        
+        <%end%>
+      </ul>
+</div>
+
+</div>
