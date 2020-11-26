@@ -21,4 +21,6 @@ post 'login' => 'sessions#create'
 delete 'logout' => 'sessions#destroy'
 resources :users
 resources :events, only: [:index, :new, :create, :show, :destroy]
+resources :attendances, only: %i[create destroy]
+  
 end
