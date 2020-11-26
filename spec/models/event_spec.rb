@@ -13,5 +13,13 @@ RSpec.describe Event, type: :model do
             expect(event.valid?).to eq(false)
           end
     end
+    context 'Association Test' do
+        it 'ensures event event belongs to one user' do
+          should belong_to(:creator)
+        end
     
+        it 'ensures event has many attendees' do
+          should have_many(:attendees)
+        end
+      end
   end

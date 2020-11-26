@@ -11,4 +11,13 @@ RSpec.describe User, type: :model do
           expect(user.valid?).to eq(false)
         end
       end
+      context 'Association Test' do
+        it 'ensures a user has many created events' do
+          should have_many(:events)
+        end
+    
+        it 'ensures event has many attendees' do
+          should have_many(:attended_events)
+        end
+      end
   end
