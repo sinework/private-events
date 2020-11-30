@@ -12,8 +12,13 @@ class EventsController < ApplicationController
   end
 
   def index
-    @past_events = Event.past
-    @upcoming_events = Event.upcoming
+    if logged_in?
+    @past_events = current_user.events.past
+    @upcoming_events = current_user.events.upcoming
+    else
+      @past_events = Event.past
+      @upcoming_events = Event.upcoming
+    end
   end
 
   def create
@@ -38,6 +43,8 @@ class EventsController < ApplicationController
   end
 
   def update; end
+
+  private
 
   def set_event
     @event = Event.find(params[:id])
