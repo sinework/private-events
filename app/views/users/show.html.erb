@@ -13,3 +13,18 @@
       </ul>
             </div>
         </div>
+  <div class="card">
+   <div class="card-header">
+             Events <%=current_user.username%> attends
+            </div>
+            <div class="card-body">
+                 <ul class="list-group mb-5">
+        <% current_user.attended_events.each do |event|%>
+
+            <li class="list-group-item"><%=event.title%></li>
+          
+        
+        <%end%>
+      </ul>
+            </div>
+        </div>
