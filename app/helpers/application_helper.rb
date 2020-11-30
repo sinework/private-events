@@ -28,18 +28,10 @@ module ApplicationHelper
     end
   end
 
-  def events_attended
-    current_user.attended_events
-  end
-
-  def all_events_created_by_user
-    current_user.events
-  end
-
   def attendance_status(event)
     results = []
     if logged_in?
-      if events_attended.find_by(id: event.id)
+      if @past_events.find_by(id: event.id) || @upcoming_events.find_by(id: event.id)
         results << "<button class='btn btn-success text-decoration-none text-light'> Attending </button> "
         results << "<button class='btn btn-danger'>
         #{link_to 'Cancel', attendance_path(event.id),
